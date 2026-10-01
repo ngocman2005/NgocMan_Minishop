@@ -1,9 +1,4 @@
-using MiniSupermarket.WinForms;
-using MiniSupermarket.WinForms; // <-- THÊM DÒNG NÀY
-using System;
-using System.Windows.Forms;
-
-namespace MiniSupermarket.WinForms // Hoặc namespace mặc định của dự án bạn
+namespace MiniSupermarket.WinForms
 {
     internal static class Program
     {
@@ -12,8 +7,8 @@ namespace MiniSupermarket.WinForms // Hoặc namespace mặc định của dự 
         {
             ApplicationConfiguration.Initialize();
 
-            // Chạy Form quản lý nhóm hàng
-            Application.Run(new FormCategoryManagement());
+            // Thay đổi Form khởi chạy đầu tiên là FormLogin thay vì FormCategoryManagement
+            Application.Run(new FormLogin());
         }
     }
 }

@@ -23,3 +23,14 @@ D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\refint\MiniSupermaket.W
 D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\MiniSupermaket.WinForms.pdb
 D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\MiniSupermaket.WinForms.genruntimeconfig.cache
 D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\ref\MiniSupermaket.WinForms.dll
+D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\MiniSupermaket.WinForms.sourcelink.json
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\Man\MiniSupermaket.WinForms\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Man\MiniSupermaket.WinForms\obj\Debug\net10.0-windows\MiniSupermarket.WinForms.FormLogin.resources

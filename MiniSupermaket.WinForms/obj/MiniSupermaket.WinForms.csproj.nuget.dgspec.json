@@ -53,6 +53,10 @@
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.12, )"
+            },
             "Microsoft.Extensions.Configuration.UserSecrets": {
               "target": "Package",
               "version": "[6.0.1, )"
@@ -60,6 +64,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.23.0, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",

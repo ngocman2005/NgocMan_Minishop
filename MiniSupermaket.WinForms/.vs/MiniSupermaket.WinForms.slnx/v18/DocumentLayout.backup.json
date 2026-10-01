@@ -1,0 +1,131 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Man\\MiniSupermaket.WinForms\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|d:\\man\\minisupermaket.winforms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|d:\\man\\minisupermaket.winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|d:\\man\\minisupermaket.winforms\\formcategorymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:formcategorymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|D:\\Man\\MiniSupermaket.WinForms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9793B0B-AF74-4246-AA5A-DE94CF71C008}|..\\MiniSupermarket.API\\MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|d:\\man\\minisupermaket.winforms\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|d:\\man\\minisupermaket.winforms\\formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{322F97E8-6D64-4487-44A7-870B1233EFFB}|MiniSupermaket.WinForms.csproj|solutionrelative:formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:44:25.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Program.cs",
+              "RelativeDocumentMoniker": "..\\MiniSupermarket.API\\Program.cs",
+              "ToolTip": "D:\\Man\\MiniSupermarket.API\\Program.cs",
+              "RelativeToolTip": "..\\MiniSupermarket.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:42:47.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormCategoryManagement.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\FormCategoryManagement.cs",
+              "RelativeDocumentMoniker": "FormCategoryManagement.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\FormCategoryManagement.cs",
+              "RelativeToolTip": "FormCategoryManagement.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAewBoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:42:18.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\SessionManager.cs",
+              "RelativeDocumentMoniker": "SessionManager.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\SessionManager.cs",
+              "RelativeToolTip": "SessionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:41:24.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormLogin.Designer.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.Designer.cs",
+              "RelativeDocumentMoniker": "FormLogin.Designer.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.Designer.cs",
+              "RelativeToolTip": "FormLogin.Designer.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAADwv2cAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:39:49.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.cs",
+              "RelativeDocumentMoniker": "FormLogin.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.cs",
+              "RelativeToolTip": "FormLogin.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswAsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:37:33.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.cs",
+              "RelativeDocumentMoniker": "FormLogin.cs",
+              "ToolTip": "D:\\Man\\MiniSupermaket.WinForms\\FormLogin.cs [Design]",
+              "RelativeToolTip": "FormLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T09:37:30.916Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

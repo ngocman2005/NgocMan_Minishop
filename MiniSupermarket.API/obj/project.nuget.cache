@@ -1,16 +1,38 @@
 {
   "version": 2,
-  "dgSpecHash": "1NfUAb+mKc0=",
+  "dgSpecHash": "Wu9CPwNopJ0=",
   "success": true,
   "projectFilePath": "D:\\Man\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore\\10.2.3\\swashbuckle.aspnetcore.10.2.3.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.2.3\\swashbuckle.aspnetcore.swagger.10.2.3.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.2.3\\swashbuckle.aspnetcore.swaggergen.10.2.3.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.3\\swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.12\\microsoft.aspnetcore.authentication.jwtbearer.10.0.12.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.23.0\\microsoft.identitymodel.abstractions.8.23.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.23.0\\microsoft.identitymodel.jsonwebtokens.8.23.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.logging\\8.23.0\\microsoft.identitymodel.logging.8.23.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.19.2\\microsoft.identitymodel.protocols.8.19.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.19.2\\microsoft.identitymodel.protocols.openidconnect.8.19.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.23.0\\microsoft.identitymodel.tokens.8.23.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.23.0\\system.identitymodel.tokens.jwt.8.23.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "MiniSupermarket.API depends on Microsoft.AspNetCore.OpenApi (>= 3.0.0) but Microsoft.AspNetCore.OpenApi 3.0.0 was not found. Microsoft.AspNetCore.OpenApi 7.0.0 was resolved instead.",
+      "projectPath": "D:\\Man\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Man\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
+      "libraryId": "Microsoft.AspNetCore.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

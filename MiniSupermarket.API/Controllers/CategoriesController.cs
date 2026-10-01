@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MiniSupermarket.API.Models;
 
 namespace MiniSupermarket.API.Controllers
 {
     [Route("api/[controller]")] // Định tuyến cơ sở: /api/categories
     [ApiController]
+    [Authorize] // Bắt buộc phải có Token mới gọi được các API trong Controller này
     public class CategoriesController : ControllerBase
     {
 
@@ -67,6 +69,20 @@ namespace MiniSupermarket.API.Controllers
 
             // Trả về mã 201 Created kèm đường dẫn dẫn tới bản ghi mới tạo
             return CreatedAtAction(nameof(GetById), new { id = newCat.CategoryId }, newCat);
+        }
+
+        [HttpGet("admin-dashboard")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetAdminDashboard()
+        {
+            return Ok(new { message = "Chào mừng Admin! Bạn có toàn quyền quản trị hệ thống siêu thị mini." });
+        }
+
+        [HttpGet("staff-pos")]
+        [Authorize(Roles = "Admin,Cashier")]
+        public IActionResult GetStaffPos()
+        {
+            return Ok(new { message = "Màn hình POS Thu ngân sẵn sàng phục vụ bán hàng." });
         }
 
         // 5. UPDATE: Cập nhật thông tin nhóm hàng (PUT /api/categories/{id})

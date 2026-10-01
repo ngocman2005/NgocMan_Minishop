@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniSupermaket.WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49a7895540b65771c034836a959a4e3d7aadca2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniSupermaket.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniSupermaket.WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

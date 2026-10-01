@@ -1,10 +1,41 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.0.1",
   "info": {
     "title": "MiniSupermarket.API",
     "version": "1.0"
   },
   "paths": {
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Categories": {
       "get": {
         "tags": [
@@ -151,6 +182,30 @@
         }
       }
     },
+    "/api/Categories/admin-dashboard": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Categories/staff-pos": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -211,6 +266,20 @@
         },
         "additionalProperties": false
       },
+      "LoginRequestDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {
@@ -234,14 +303,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Nhập token JWT vào đây:",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
   },
-  "tags": [
+  "security": [
     {
-      "name": "Categories"
-    },
-    {
-      "name": "WeatherForecast"
+      "Bearer": [ ]
     }
   ]
 }
