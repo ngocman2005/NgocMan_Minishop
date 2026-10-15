@@ -182,30 +182,6 @@
         }
       }
     },
-    "/api/Categories/admin-dashboard": {
-      "get": {
-        "tags": [
-          "Categories"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Categories/staff-pos": {
-      "get": {
-        "tags": [
-          "Categories"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -249,6 +225,9 @@
   "components": {
     "schemas": {
       "Category": {
+        "required": [
+          "categoryName"
+        ],
         "type": "object",
         "properties": {
           "categoryId": {
@@ -256,10 +235,13 @@
             "format": "int32"
           },
           "categoryName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
           },
           "description": {
+            "maxLength": 255,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           }

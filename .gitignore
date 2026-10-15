@@ -1,0 +1,48 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.ide
+.vscode/
+
+# Build folders
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code workspace
+.vscode/
+
+# dotnet
+project.lock.json
+project.fragment.lock.json
+
+# EF migrations (keep migrations folder if you want; remove if not)
+#MiniSupermarket.API/Migrations/
+
+# Ignore local settings
+appsettings.Development.json
+
+# User-specific files
+*.db
+
+# Endpoint info generated during build
+**/EndpointInfo/
+
+# JetBrains
+*.sln.iml

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "J2UJlITQsNs=",
+  "dgSpecHash": "5qOqTkj9GtE=",
   "success": true,
   "projectFilePath": "D:\\Man\\MiniSupermaket.WinForms\\MiniSupermaket.WinForms.csproj",
   "expectedPackageFiles": [
@@ -29,21 +29,7 @@
     "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.2.3\\swashbuckle.aspnetcore.swagger.10.2.3.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.2.3\\swashbuckle.aspnetcore.swaggergen.10.2.3.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.3\\swashbuckle.aspnetcore.swaggerui.10.2.3.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.23.0\\system.identitymodel.tokens.jwt.8.23.0.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\system.net.http.json\\10.0.12\\system.net.http.json.10.0.12.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.23.0\\system.identitymodel.tokens.jwt.8.23.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference System.Net.Http.Json will not be pruned. This package is automatically available and does not need to be referenced explicitly. Remove the PackageReference item.",
-      "projectPath": "D:\\Man\\MiniSupermaket.WinForms\\MiniSupermaket.WinForms.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Man\\MiniSupermaket.WinForms\\MiniSupermaket.WinForms.csproj",
-      "libraryId": "System.Net.Http.Json",
-      "targetGraphs": [
-        "net10.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

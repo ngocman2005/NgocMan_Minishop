@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="../MiniSupermaket.WinForms/MiniSupermaket.WinForms.csproj" />
+  <Project Path="MiniSupermarket.API.csproj" />
 </Solution>

@@ -4,6 +4,10 @@ using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models; // Thêm dòng này để nhận diện cấu hình ổ khóa
 using System.Text;
 
+using Microsoft.EntityFrameworkCore;
+using MiniSupermarket.API.Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // 1. Cấu hình dịch vụ xác thực JWT Bearer
@@ -57,6 +61,14 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Đăng ký SupermarketDbContext kết nối SQL Server (phải đăng ký trước khi Build)
+builder.Services.AddDbContext<SupermarketDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<SupermarketDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
 
 // 3. Cấu hình sử dụng Swagger ở môi trường phát triển (hiển thị tại root https://localhost:7086/)
@@ -69,6 +81,7 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty; // Mở Swagger ngay tại trang chủ
     });
 }
+
 
 app.UseHttpsRedirection();
 
