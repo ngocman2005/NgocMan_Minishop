@@ -3,11 +3,11 @@
     "Name": "New Profile",
     "Projects": [
       {
-        "Path": "MiniSupermaket.WinForms.csproj",
+        "Path": "..\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
         "Action": "Start"
       },
       {
-        "Path": "..\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
+        "Path": "MiniSupermarket.WinForms.csproj",
         "Action": "Start"
       }
     ]

@@ -7,10 +7,28 @@
     <ActiveDebugProfile>MiniSupermaket.WinForms</ActiveDebugProfile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="FormCategoryManagement.cs">
+    <Compile Update="Forms\FormCategoryManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormLogin.cs">
+    <Compile Update="Forms\FormCustomerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormMainShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormQuickReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormUserManagement.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
