@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "D:\\Man\\MiniSupermarket.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\Buoi5\\Buoi5\\MiniSupermarket.API\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -33,10 +40,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{972B3012-D840-5C14-F94B-5AE2744A1B3C}|MiniSupermarket.API.csproj|d:\\man\\minisupermarket.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -129,20 +132,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
-              "ToolTip": "D:\\Man\\MiniSupermarket.API\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\Buoi5\\Buoi5\\MiniSupermarket.API\\Program.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\Buoi5\\Buoi5\\MiniSupermarket.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T16:48:35.559Z",
+              "WhenOpened": "2026-10-16T17:07:57.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
@@ -155,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Requests.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Dto\\Requests.cs",
               "RelativeDocumentMoniker": "Dto\\Requests.cs",
@@ -168,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "OrderDetailsController.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\OrderDetailsController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderDetailsController.cs",
@@ -182,6 +183,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Man\\MiniSupermarket.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwF0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-14T12:09:30.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\Man\\MiniSupermarket.API\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T16:48:35.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -194,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomersController.cs",
@@ -207,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "20261015123352_InitFullDatabaseWithSeedData.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Migrations\\20261015123352_InitFullDatabaseWithSeedData.cs",
               "RelativeDocumentMoniker": "Migrations\\20261015123352_InitFullDatabaseWithSeedData.cs",
@@ -219,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -232,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SupermarketDbContext.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\SupermarketDbContext.cs",
               "RelativeDocumentMoniker": "SupermarketDbContext.cs",
@@ -245,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": ".gitignore",
               "DocumentMoniker": "D:\\Man\\.gitignore",
               "RelativeDocumentMoniker": "..\\.gitignore",
@@ -257,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\Program.cs",
               "RelativeDocumentMoniker": "..\\MiniSupermaket.WinForms\\Program.cs",
@@ -269,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ChildForms.cs",
               "DocumentMoniker": "C:\\Users\\admin\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-506118517\\ChildForms.cs",
               "ToolTip": "C:\\Users\\admin\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-506118517\\ChildForms.cs",
@@ -279,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "SharedTypes.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermaket.WinForms\\SharedTypes.cs",
               "RelativeDocumentMoniker": "..\\MiniSupermaket.WinForms\\SharedTypes.cs",
@@ -291,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -303,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Models\\Customer.cs",
@@ -315,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -327,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
@@ -339,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\OrderDetail.cs",
               "RelativeDocumentMoniker": "Models\\OrderDetail.cs",
@@ -351,19 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Man\\MiniSupermarket.API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAADwv0EAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-14T12:09:30.273Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Category.cs",
@@ -375,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\admin\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1777702388\\Product.cs",
               "ToolTip": "C:\\Users\\admin\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1777702388\\Product.cs",
@@ -385,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "MiniSupermarket.API.csproj",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
               "RelativeDocumentMoniker": "MiniSupermarket.API.csproj",
@@ -397,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
@@ -409,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -421,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "MiniSupermarket.API",
               "DocumentMoniker": "D:\\Man\\MiniSupermarket.API\\MiniSupermarket.API.csproj",
               "RelativeDocumentMoniker": "MiniSupermarket.API.csproj",
