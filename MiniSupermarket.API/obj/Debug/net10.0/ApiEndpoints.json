@@ -438,47 +438,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
-    "Method": "GetAll",
-    "RelativePath": "api/Products",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "q",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "pageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "categoryId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
-    "Method": "Create",
-    "RelativePath": "api/Products",
+    "ContainingType": "MiniSupermarket.API.Controllers.OrdersController",
+    "Method": "Checkout",
+    "RelativePath": "api/Orders/checkout",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "MiniSupermarket.API.Models.Product",
+        "Name": "request",
+        "Type": "MiniSupermarket.API.Dto.CheckoutRequest",
         "IsRequired": true
       }
     ],
@@ -486,7 +455,53 @@
   },
   {
     "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
-    "Method": "GetById",
+    "Method": "GetProducts",
+    "RelativePath": "api/Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MiniSupermarket.API.Models.ProductItemDto, MiniSupermarket.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/Products",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MiniSupermarket.API.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MiniSupermarket.API.Models.Product",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
+    "Method": "GetProduct",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -498,11 +513,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "MiniSupermarket.API.Models.ProductItemDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
-    "Method": "Update",
+    "Method": "UpdateProduct",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -523,7 +548,7 @@
   },
   {
     "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
-    "Method": "Delete",
+    "Method": "DeleteProduct",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -540,15 +565,67 @@
   {
     "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
     "Method": "GetByBarcode",
-    "RelativePath": "api/Products/barcode/{code}",
+    "RelativePath": "api/Products/barcode/{barcode}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
+        "Name": "barcode",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MiniSupermarket.API.Models.ProductItemDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MiniSupermarket.API.Controllers.ProductsController",
+    "Method": "GetPagedProducts",
+    "RelativePath": "api/Products/paged",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MiniSupermarket.API.Controllers.ReportsController",
+    "Method": "GetQuickReport",
+    "RelativePath": "api/Reports/quick",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

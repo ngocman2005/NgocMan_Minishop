@@ -27,6 +27,75 @@ namespace MiniSupermarket.API.Controllers
             return Ok(order);
         }
 
+        // POST: api/orders/checkout
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout([FromBody] CheckoutRequest request)
+        {
+            if (request.Items.Count == 0)
+                return BadRequest(new { message = "Giỏ hàng đang trống." });
+
+            var customer = string.IsNullOrWhiteSpace(request.CustomerPhone)
+                ? await _context.Customers.OrderBy(c => c.CustomerId).FirstOrDefaultAsync()
+                : await _context.Customers.FirstOrDefaultAsync(c => c.PhoneNumber == request.CustomerPhone.Trim());
+
+            if (customer == null)
+                return BadRequest(new { message = "Không tìm thấy khách hàng." });
+
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                var products = new List<Product>();
+                foreach (var item in request.Items)
+                {
+                    if (item.Quantity < 1)
+                        return BadRequest(new { message = "Số lượng sản phẩm phải lớn hơn 0." });
+
+                    var product = await _context.Products.FindAsync(item.ProductId);
+                    if (product == null)
+                        return BadRequest(new { message = $"Không tìm thấy sản phẩm #{item.ProductId}." });
+                    if (product.StockQuantity < item.Quantity)
+                        return BadRequest(new { message = $"Sản phẩm {product.ProductName} không đủ tồn kho." });
+                    products.Add(product);
+                }
+
+                var order = new Order
+                {
+                    OrderCode = $"HD{DateTime.Now:yyyyMMddHHmmssfff}",
+                    CustomerId = customer.CustomerId,
+                    CashierUsername = string.IsNullOrWhiteSpace(request.CashierUsername) ? "unknown" : request.CashierUsername,
+                    CreatedDate = DateTime.Now,
+                    TotalItems = request.Items.Sum(i => i.Quantity),
+                    FinalAmount = request.Items.Sum(i => i.UnitPrice * i.Quantity)
+                };
+                _context.Orders.Add(order);
+                await _context.SaveChangesAsync();
+
+                for (var index = 0; index < request.Items.Count; index++)
+                {
+                    var item = request.Items[index];
+                    var product = products[index];
+                    product.StockQuantity -= item.Quantity;
+                    _context.OrderDetails.Add(new OrderDetail
+                    {
+                        OrderId = order.OrderId,
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        UnitPrice = item.UnitPrice,
+                        LineTotal = item.UnitPrice * item.Quantity
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+                return Ok(new { orderId = order.OrderId, orderCode = order.OrderCode, totalAmount = order.FinalAmount });
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] OrderCreateRequest request)
         {

@@ -121,7 +121,7 @@ namespace MiniSupermarket.WinForms
             this.lblHint.Location = new Point(40, 332);
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new Size(320, 50);
-            this.lblHint.Text = "Tài khoản mẫu: admin01 / cashier01 / ware01\r\nMật khẩu ban đầu: 123456";
+            this.lblHint.Text = "Tài khoản mẫu: admin / cashier01 / warehouse01\r\nMật khẩu chung: 123456";
             // 
             // FormLogin
             // 

@@ -39,21 +39,21 @@ namespace MiniSupermarket.API.Data
 
             // 1. DATA SEEDING: BẢNG USERS (15 Nhân viên thuộc 3 bộ phận: Admin, Cashier, Warehouse)
             modelBuilder.Entity<User>().HasData(
-                new User { UserId = 1, Username = "admin", PasswordHash = "admin@123", FullName = "Nguyễn Quản Trị", Role = "Admin", IsActive = true },
-                new User { UserId = 2, Username = "manager01", PasswordHash = "manager@123", FullName = "Trần Cửa Hàng Trưởng", Role = "Admin", IsActive = true },
-                new User { UserId = 3, Username = "cashier01", PasswordHash = "cashier@123", FullName = "Lê Thu Ngân 1", Role = "Cashier", IsActive = true },
-                new User { UserId = 4, Username = "cashier02", PasswordHash = "cashier@123", FullName = "Phạm Thu Ngân 2", Role = "Cashier", IsActive = true },
-                new User { UserId = 5, Username = "cashier03", PasswordHash = "cashier@123", FullName = "Hoàng Thu Ngân 3", Role = "Cashier", IsActive = true },
-                new User { UserId = 6, Username = "cashier04", PasswordHash = "cashier@123", FullName = "Vũ Thu Ngân 4", Role = "Cashier", IsActive = true },
-                new User { UserId = 7, Username = "cashier05", PasswordHash = "cashier@123", FullName = "Đỗ Thu Ngân 5", Role = "Cashier", IsActive = true },
-                new User { UserId = 8, Username = "cashier06", PasswordHash = "cashier@123", FullName = "Ngô Thu Ngân 6", Role = "Cashier", IsActive = true },
-                new User { UserId = 9, Username = "cashier07", PasswordHash = "cashier@123", FullName = "Bùi Thu Ngân 7", Role = "Cashier", IsActive = true },
-                new User { UserId = 10, Username = "warehouse01", PasswordHash = "wh@123", FullName = "Đặng Thủ Kho 1", Role = "Warehouse", IsActive = true },
-                new User { UserId = 11, Username = "warehouse02", PasswordHash = "wh@123", FullName = "Trương Thủ Kho 2", Role = "Warehouse", IsActive = true },
-                new User { UserId = 12, Username = "warehouse03", PasswordHash = "wh@123", FullName = "Lý Kiểm Kê", Role = "Warehouse", IsActive = true },
-                new User { UserId = 13, Username = "cashier08", PasswordHash = "cashier@123", FullName = "Mai Thu Ngân 8", Role = "Cashier", IsActive = true },
-                new User { UserId = 14, Username = "cashier09", PasswordHash = "cashier@123", FullName = "Dương Thu Ngân 9", Role = "Cashier", IsActive = true },
-                new User { UserId = 15, Username = "staff_lock", PasswordHash = "lock@123", FullName = "Hồ Nhân Viên Nghỉ Việc", Role = "Cashier", IsActive = false }
+                new User { UserId = 1, Username = "admin", PasswordHash = "123456", FullName = "Nguyễn Quản Trị", Role = "Admin", IsActive = true },
+                new User { UserId = 2, Username = "manager01", PasswordHash = "123456", FullName = "Trần Cửa Hàng Trưởng", Role = "Admin", IsActive = true },
+                new User { UserId = 3, Username = "cashier01", PasswordHash = "123456", FullName = "Lê Thu Ngân 1", Role = "Cashier", IsActive = true },
+                new User { UserId = 4, Username = "cashier02", PasswordHash = "123456", FullName = "Phạm Thu Ngân 2", Role = "Cashier", IsActive = true },
+                new User { UserId = 5, Username = "cashier03", PasswordHash = "123456", FullName = "Hoàng Thu Ngân 3", Role = "Cashier", IsActive = true },
+                new User { UserId = 6, Username = "cashier04", PasswordHash = "123456", FullName = "Vũ Thu Ngân 4", Role = "Cashier", IsActive = true },
+                new User { UserId = 7, Username = "cashier05", PasswordHash = "123456", FullName = "Đỗ Thu Ngân 5", Role = "Cashier", IsActive = true },
+                new User { UserId = 8, Username = "cashier06", PasswordHash = "123456", FullName = "Ngô Thu Ngân 6", Role = "Cashier", IsActive = true },
+                new User { UserId = 9, Username = "cashier07", PasswordHash = "123456", FullName = "Bùi Thu Ngân 7", Role = "Cashier", IsActive = true },
+                new User { UserId = 10, Username = "warehouse01", PasswordHash = "123456", FullName = "Đặng Thủ Kho 1", Role = "Warehouse", IsActive = true },
+                new User { UserId = 11, Username = "warehouse02", PasswordHash = "123456", FullName = "Trương Thủ Kho 2", Role = "Warehouse", IsActive = true },
+                new User { UserId = 12, Username = "warehouse03", PasswordHash = "123456", FullName = "Lý Kiểm Kê", Role = "Warehouse", IsActive = true },
+                new User { UserId = 13, Username = "cashier08", PasswordHash = "123456", FullName = "Mai Thu Ngân 8", Role = "Cashier", IsActive = true },
+                new User { UserId = 14, Username = "cashier09", PasswordHash = "123456", FullName = "Dương Thu Ngân 9", Role = "Cashier", IsActive = true },
+                new User { UserId = 15, Username = "staff_lock", PasswordHash = "123456", FullName = "Hồ Nhân Viên Nghỉ Việc", Role = "Cashier", IsActive = false }
             );
 
             // 2. DATA SEEDING: BẢNG CATEGORIES (15 Nhóm hàng siêu thị thực tế)

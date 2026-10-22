@@ -10,69 +10,213 @@ namespace MiniSupermarket.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly SupermarketDbContext _context;
-        public ProductsController(SupermarketDbContext context) => _context = context;
 
+        public ProductsController(SupermarketDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/products
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] string? q, [FromQuery] int page = 1, [FromQuery] int pageSize = 20, [FromQuery] int? categoryId = null)
+        public async Task<ActionResult<IEnumerable<ProductItemDto>>> GetProducts()
         {
-            var query = _context.Products.Include(p => p.Category).AsNoTracking().AsQueryable();
-            if (!string.IsNullOrWhiteSpace(q))
-                query = query.Where(p => p.ProductName.Contains(q) || p.Barcode.Contains(q));
-            if (categoryId.HasValue && categoryId.Value > 0)
-                query = query.Where(p => p.CategoryId == categoryId.Value);
-
-            var total = await query.CountAsync();
-            var items = await query.OrderBy(p => p.ProductId).Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-            return Ok(new { total, page, pageSize, items });
+            return Ok(await _context.Products
+                .Include(p => p.Category)
+                .AsNoTracking()
+                .OrderBy(p => p.ProductId)
+                .Select(p => new ProductItemDto
+                {
+                    ProductId = p.ProductId,
+                    Barcode = p.Barcode,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    CategoryId = p.CategoryId,
+                    CategoryName = p.Category == null ? string.Empty : p.Category.CategoryName
+                })
+                .ToListAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        // GET: api/products/barcode/893456789001
+        [HttpGet("barcode/{barcode}")]
+        public async Task<ActionResult<ProductItemDto>> GetByBarcode(string barcode)
         {
-            var item = await _context.Products.Include(p => p.Category).FirstOrDefaultAsync(p => p.ProductId == id);
-            if (item == null) return NotFound();
-            return Ok(item);
+            var value = barcode.Trim();
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .AsNoTracking()
+                .Where(p => p.Barcode == value)
+                .Select(p => new ProductItemDto
+                {
+                    ProductId = p.ProductId,
+                    Barcode = p.Barcode,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    CategoryId = p.CategoryId,
+                    CategoryName = p.Category == null ? string.Empty : p.Category.CategoryName
+                })
+                .FirstOrDefaultAsync();
+
+            return product == null
+                ? NotFound(new { message = $"Không tìm thấy sản phẩm có mã vạch {value}." })
+                : Ok(product);
         }
 
-        [HttpGet("barcode/{code}")]
-        public async Task<IActionResult> GetByBarcode(string code)
+        // GET: api/products/5
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductItemDto>> GetProduct(int id)
         {
-            var item = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Barcode == code);
-            if (item == null) return NotFound();
-            return Ok(item);
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .AsNoTracking()
+                .Where(p => p.ProductId == id)
+                .Select(p => new ProductItemDto
+                {
+                    ProductId = p.ProductId,
+                    Barcode = p.Barcode,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    CategoryId = p.CategoryId,
+                    CategoryName = p.Category == null ? string.Empty : p.Category.CategoryName
+                })
+                .FirstOrDefaultAsync();
+
+            return product == null ? NotFound(new { message = "Không tìm thấy sản phẩm." }) : Ok(product);
         }
 
+        // POST: api/products
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Product model)
+        public async Task<ActionResult<Product>> CreateProduct(Product product)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            _context.Products.Add(model);
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var categoryExists = await _context.Categories.AnyAsync(c => c.CategoryId == product.CategoryId);
+            if (!categoryExists)
+                return BadRequest(new { message = "CategoryId không tồn tại." });
+
+            var barcodeExists = await _context.Products.AnyAsync(p => p.Barcode == product.Barcode);
+            if (barcodeExists)
+                return Conflict(new { message = "Mã vạch đã tồn tại." });
+
+            product.ProductId = 0;
+            product.Category = null;
+            _context.Products.Add(product);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = model.ProductId }, model);
+
+            return CreatedAtAction(nameof(GetProduct), new { id = product.ProductId }, product);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Product update)
+        // PUT: api/products/5
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateProduct(int id, Product update)
         {
-            var existing = await _context.Products.FindAsync(id);
-            if (existing == null) return NotFound();
-            existing.Barcode = update.Barcode;
-            existing.ProductName = update.ProductName;
-            existing.Price = update.Price;
-            existing.StockQuantity = update.StockQuantity;
-            existing.CategoryId = update.CategoryId;
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+                return NotFound(new { message = "Không tìm thấy sản phẩm." });
+
+            var categoryExists = await _context.Categories.AnyAsync(c => c.CategoryId == update.CategoryId);
+            if (!categoryExists)
+                return BadRequest(new { message = "CategoryId không tồn tại." });
+
+            var barcodeExists = await _context.Products
+                .AnyAsync(p => p.ProductId != id && p.Barcode == update.Barcode);
+            if (barcodeExists)
+                return Conflict(new { message = "Mã vạch đã tồn tại." });
+
+            product.Barcode = update.Barcode;
+            product.ProductName = update.ProductName;
+            product.Price = update.Price;
+            product.StockQuantity = update.StockQuantity;
+            product.CategoryId = update.CategoryId;
+
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        // DELETE: api/products/5
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            var item = await _context.Products.FindAsync(id);
-            if (item == null) return NotFound();
-            _context.Products.Remove(item);
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+                return NotFound(new { message = "Không tìm thấy sản phẩm." });
+
+            var isUsedInOrder = await _context.OrderDetails.AnyAsync(d => d.ProductId == id);
+            if (isUsedInOrder)
+                return Conflict(new { message = "Không thể xóa sản phẩm đã có trong hóa đơn." });
+
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return NoContent();
+        }
+
+        // GET: api/products/paged?keyword=sua&pageNumber=1&pageSize=5
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPagedProducts(
+            [FromQuery] string? keyword,
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 5)
+        {
+            // 1. Kiểm tra tham số trang đầu vào hợp lệ
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageSize < 1 || pageSize > 50) pageSize = 5; // Mặc định 5 dòng, tối đa 50 dòng
+
+            // 2. Khởi tạo truy vấn LINQ IQueryable kết hợp Eager Loading (.Include)
+            // AsNoTracking giúp tối ưu hóa bộ nhớ RAM cho các truy vấn chỉ đọc dữ liệu
+            var query = _context.Products
+                .Include(p => p.Category)
+                .AsNoTracking()
+                .AsQueryable();
+
+            // 3. Lọc theo từ khóa tìm kiếm (nếu người dùng có nhập)
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                string search = keyword.Trim().ToLower();
+                query = query.Where(p => p.ProductName.ToLower().Contains(search)
+                                      || p.Barcode.Contains(search));
+            }
+
+            // 4. Đếm tổng số lượng bản ghi thỏa mãn điều kiện
+            int totalItems = await query.CountAsync();
+
+            // 5. Tính toán tổng số trang
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            // 6. Áp dụng toán tử Skip và Take để phân trang trực tiếp dưới SQL Server
+            var items = await query
+                .OrderBy(p => p.ProductId) // Bắt buộc phải OrderBy trước khi Skip/Take
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .Select(p => new ProductItemDto
+                {
+                    ProductId = p.ProductId,
+                    Barcode = p.Barcode,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    CategoryId = p.CategoryId,
+                    CategoryName = p.Category != null ? p.Category.CategoryName : string.Empty
+                })
+                .ToListAsync();
+
+            // 7. Đóng gói kết quả trả về cho Client
+            var response = new PagedResult<ProductItemDto>
+            {
+                CurrentPage = pageNumber,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = totalPages,
+                Items = items
+            };
+
+            return Ok(response);
         }
     }
 }
+

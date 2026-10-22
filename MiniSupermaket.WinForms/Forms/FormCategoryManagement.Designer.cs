@@ -4,102 +4,35 @@ namespace MiniSupermarket.WinForms
     partial class FormCategoryManagement
     {
         private System.ComponentModel.IContainer components = null;
-        private Panel panelTop;
-        private Button btnReload;
-        private Label lblNote;
-        private Panel panelGrid;
+        private Panel panelGrid, panelDetail;
         private DataGridView dgvCategories;
+        private Label lblId, lblName, lblDescription;
+        private TextBox txtCategoryId, txtCategoryName, txtDescription;
+        private Button btnAdd, btnUpdate, btnDelete, btnReload;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && components != null) components.Dispose();
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
-            this.panelTop = new Panel();
-            this.btnReload = new Button();
-            this.lblNote = new Label();
-            this.panelGrid = new Panel();
-            this.dgvCategories = new DataGridView();
-            this.panelTop.SuspendLayout();
-            this.panelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = Color.White;
-            this.panelTop.Controls.Add(this.lblNote);
-            this.panelTop.Controls.Add(this.btnReload);
-            this.panelTop.Dock = DockStyle.Top;
-            this.panelTop.Height = 60;
-            this.panelTop.Name = "panelTop";
-            this.panelTop.TabIndex = 1;
-            // 
-            // btnReload
-            // 
-            this.btnReload.Location = new Point(15, 15);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new Size(110, 30);
-            this.btnReload.TabIndex = 0;
-            this.btnReload.Text = "🔄 Tải lại";
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new EventHandler(this.btnReload_Click);
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.ForeColor = Color.Gray;
-            this.lblNote.Location = new Point(140, 22);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Text = "Danh sách nhóm hàng (màn hình CRUD đầy đủ làm ở Buổi 2-3 sẽ thay thế form mẫu này).";
-            // 
-            // panelGrid
-            // 
-            this.panelGrid.Controls.Add(this.dgvCategories);
-            this.panelGrid.Dock = DockStyle.Fill;
-            this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Padding = new Padding(15);
-            this.panelGrid.TabIndex = 0;
-            // 
-            // dgvCategories
-            // 
-            this.dgvCategories.AllowUserToAddRows = false;
-            this.dgvCategories.AllowUserToDeleteRows = false;
-            this.dgvCategories.BackgroundColor = Color.White;
-            this.dgvCategories.BorderStyle = BorderStyle.None;
-            this.dgvCategories.Dock = DockStyle.Fill;
-            this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.ReadOnly = true;
-            this.dgvCategories.RowHeadersVisible = false;
-            this.dgvCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategories.TabIndex = 0;
-            // 
-            // FormCategoryManagement
-            // 
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(244, 245, 247);
-            this.ClientSize = new Size(1050, 660);
-            this.Controls.Add(this.panelGrid);
-            this.Controls.Add(this.panelTop);
-            this.Name = "FormCategoryManagement";
-            this.Text = "FormCategoryManagement";
-            this.Load += new EventHandler(this.FormCategoryManagement_Load);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.panelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
-            this.ResumeLayout(false);
+            panelGrid = new Panel(); panelDetail = new Panel(); dgvCategories = new DataGridView();
+            lblId = new Label(); lblName = new Label(); lblDescription = new Label();
+            txtCategoryId = new TextBox(); txtCategoryName = new TextBox(); txtDescription = new TextBox();
+            btnAdd = new Button(); btnUpdate = new Button(); btnDelete = new Button(); btnReload = new Button();
+            panelGrid.SuspendLayout(); panelDetail.SuspendLayout(); ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit(); SuspendLayout();
+            panelGrid.Dock = DockStyle.Fill; panelGrid.Padding = new Padding(15); panelGrid.Controls.Add(dgvCategories);
+            dgvCategories.Dock = DockStyle.Fill; dgvCategories.BackgroundColor = Color.White; dgvCategories.ReadOnly = true; dgvCategories.AllowUserToAddRows = false; dgvCategories.RowHeadersVisible = false; dgvCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect; dgvCategories.CellClick += dgvCategories_CellClick;
+            panelDetail.Dock = DockStyle.Right; panelDetail.Width = 300; panelDetail.BackColor = Color.White; panelDetail.Padding = new Padding(15);
+            lblId.Text = "Mã danh mục"; lblId.Location = new Point(15, 20); lblId.AutoSize = true; txtCategoryId.Location = new Point(15, 42); txtCategoryId.Width = 260; txtCategoryId.ReadOnly = true;
+            lblName.Text = "Tên danh mục"; lblName.Location = new Point(15, 78); lblName.AutoSize = true; txtCategoryName.Location = new Point(15, 100); txtCategoryName.Width = 260;
+            lblDescription.Text = "Mô tả"; lblDescription.Location = new Point(15, 136); lblDescription.AutoSize = true; txtDescription.Location = new Point(15, 158); txtDescription.Width = 260; txtDescription.Height = 60; txtDescription.Multiline = true;
+            btnAdd.Text = "Thêm"; btnAdd.Location = new Point(15, 240); btnAdd.Click += btnAdd_Click; btnUpdate.Text = "Sửa"; btnUpdate.Location = new Point(95, 240); btnUpdate.Click += btnUpdate_Click; btnDelete.Text = "Xóa"; btnDelete.Location = new Point(175, 240); btnDelete.Click += btnDelete_Click; btnReload.Text = "Tải lại"; btnReload.Location = new Point(15, 280); btnReload.Click += btnReload_Click;
+            panelDetail.Controls.AddRange(new Control[] { lblId, txtCategoryId, lblName, txtCategoryName, lblDescription, txtDescription, btnAdd, btnUpdate, btnDelete, btnReload });
+            Controls.Add(panelGrid); Controls.Add(panelDetail); Text = "Quản lý danh mục"; ClientSize = new Size(1000, 600); Load += FormCategoryManagement_Load;
+            panelGrid.ResumeLayout(false); panelDetail.ResumeLayout(false); panelDetail.PerformLayout(); ((System.ComponentModel.ISupportInitialize)dgvCategories).EndInit(); ResumeLayout(false);
         }
-
-        #endregion
     }
 }

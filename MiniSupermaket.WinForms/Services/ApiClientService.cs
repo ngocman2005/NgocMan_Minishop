@@ -1,33 +1,39 @@
+/*
+ * Họ tên sinh viên: Nguyen Ngoc Man
+ * Mã sinh viên: 2123110100
+ * Mô tả: Lớp tĩnh quản lý HttpClient kết nối Web API, tự động gắn JWT Bearer Token
+ */
 using System.Net.Http.Headers;
 
-namespace MiniSupermarket.WinForms.Services;
-
-public static class AppConfig
+namespace MiniSupermarket.WinForms.Services
 {
-    /// <summary>true = chạy với dữ liệu giả lập trong bộ nhớ (không cần Web API). false = gọi API thật.</summary>
-    public const bool UseMockApi = true;
-
-    /// <summary>Địa chỉ Web API thật (Buổi 2-3). Phải kết thúc bằng dấu '/'.</summary>
-    public const string ApiBaseUrl = "https://localhost:7001/api/";
-}
-
-public static class ApiClientService
-{
-    public static HttpClient Client { get; } = CreateClient();
-
-    private static HttpClient CreateClient()
+    public static class ApiClientService
     {
-        HttpMessageHandler handler = AppConfig.UseMockApi ? new MockApiHandler() : new HttpClientHandler();
-        return new HttpClient(handler)
+        // Khởi tạo một phiên bản HttpClient dùng chung cho toàn ứng dụng
+        public static readonly HttpClient Client = new HttpClient
         {
-            BaseAddress = new Uri(AppConfig.ApiBaseUrl),
-            Timeout = TimeSpan.FromSeconds(30)
+            // Đảm bảo số cổng Port trùng khớp với số Port đang chạy của Web API Backend
+            BaseAddress = new Uri("https://localhost:7086/api/")
         };
+
+        // Phương thức cập nhật Bearer Token sau khi đăng nhập thành công
+        public static void AttachToken(string token)
+        {
+            Client.DefaultRequestHeaders.Authorization = null; // Xóa token cũ
+            if (!string.IsNullOrEmpty(token))
+            {
+                Client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
+            }
+        }
+
+        // Tên tương thích với các form đăng nhập/đăng xuất hiện có.
+        public static void SetToken(string token) => AttachToken(token);
+
+        public static void ClearToken()
+        {
+            Client.DefaultRequestHeaders.Authorization = null;
+        }
     }
-
-    public static void SetToken(string token) =>
-        Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-    public static void ClearToken() =>
-        Client.DefaultRequestHeaders.Authorization = null;
 }
+

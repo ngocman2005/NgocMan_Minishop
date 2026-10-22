@@ -4,102 +4,22 @@ namespace MiniSupermarket.WinForms
     partial class FormCustomerManagement
     {
         private System.ComponentModel.IContainer components = null;
-        private Panel panelTop;
-        private Button btnReload;
-        private Label lblNote;
-        private Panel panelGrid;
-        private DataGridView dgvCustomers;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
+        private Panel panelGrid, panelDetail; private DataGridView dgvCustomers;
+        private Label lblId, lblName, lblPhone, lblAddress; private TextBox txtCustomerId, txtCustomerName, txtPhone, txtAddress;
+        private Button btnAdd, btnUpdate, btnDelete, btnReload;
+        protected override void Dispose(bool disposing) { if (disposing && components != null) components.Dispose(); base.Dispose(disposing); }
         private void InitializeComponent()
         {
-            this.panelTop = new Panel();
-            this.btnReload = new Button();
-            this.lblNote = new Label();
-            this.panelGrid = new Panel();
-            this.dgvCustomers = new DataGridView();
-            this.panelTop.SuspendLayout();
-            this.panelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = Color.White;
-            this.panelTop.Controls.Add(this.lblNote);
-            this.panelTop.Controls.Add(this.btnReload);
-            this.panelTop.Dock = DockStyle.Top;
-            this.panelTop.Height = 60;
-            this.panelTop.Name = "panelTop";
-            this.panelTop.TabIndex = 1;
-            // 
-            // btnReload
-            // 
-            this.btnReload.Location = new Point(15, 15);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new Size(110, 30);
-            this.btnReload.TabIndex = 0;
-            this.btnReload.Text = "🔄 Tải lại";
-            this.btnReload.UseVisualStyleBackColor = true;
-            this.btnReload.Click += new EventHandler(this.btnReload_Click);
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.ForeColor = Color.Gray;
-            this.lblNote.Location = new Point(140, 22);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Text = "Danh sách khách hàng thân thiết (form mẫu - thay bằng bản đầy đủ của Buổi 2-3).";
-            // 
-            // panelGrid
-            // 
-            this.panelGrid.Controls.Add(this.dgvCustomers);
-            this.panelGrid.Dock = DockStyle.Fill;
-            this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Padding = new Padding(15);
-            this.panelGrid.TabIndex = 0;
-            // 
-            // dgvCustomers
-            // 
-            this.dgvCustomers.AllowUserToAddRows = false;
-            this.dgvCustomers.AllowUserToDeleteRows = false;
-            this.dgvCustomers.BackgroundColor = Color.White;
-            this.dgvCustomers.BorderStyle = BorderStyle.None;
-            this.dgvCustomers.Dock = DockStyle.Fill;
-            this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.RowHeadersVisible = false;
-            this.dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.TabIndex = 0;
-            // 
-            // FormCustomerManagement
-            // 
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(244, 245, 247);
-            this.ClientSize = new Size(1050, 660);
-            this.Controls.Add(this.panelGrid);
-            this.Controls.Add(this.panelTop);
-            this.Name = "FormCustomerManagement";
-            this.Text = "FormCustomerManagement";
-            this.Load += new EventHandler(this.FormCustomerManagement_Load);
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.panelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
-            this.ResumeLayout(false);
+            panelGrid = new Panel(); panelDetail = new Panel(); dgvCustomers = new DataGridView(); lblId = new Label(); lblName = new Label(); lblPhone = new Label(); lblAddress = new Label(); txtCustomerId = new TextBox(); txtCustomerName = new TextBox(); txtPhone = new TextBox(); txtAddress = new TextBox(); btnAdd = new Button(); btnUpdate = new Button(); btnDelete = new Button(); btnReload = new Button();
+            panelGrid.Dock = DockStyle.Fill; panelGrid.Padding = new Padding(15); panelGrid.Controls.Add(dgvCustomers); panelDetail.Dock = DockStyle.Right; panelDetail.Width = 300; panelDetail.BackColor = Color.White; panelDetail.Padding = new Padding(15);
+            dgvCustomers.Dock = DockStyle.Fill; dgvCustomers.BackgroundColor = Color.White; dgvCustomers.ReadOnly = true; dgvCustomers.AllowUserToAddRows = false; dgvCustomers.RowHeadersVisible = false; dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect; dgvCustomers.CellClick += dgvCustomers_CellClick;
+            lblId.Text = "Mã khách hàng"; lblId.Location = new Point(15, 20); lblId.AutoSize = true; txtCustomerId.Location = new Point(15, 42); txtCustomerId.Width = 260; txtCustomerId.ReadOnly = true;
+            lblName.Text = "Họ và tên"; lblName.Location = new Point(15, 78); lblName.AutoSize = true; txtCustomerName.Location = new Point(15, 100); txtCustomerName.Width = 260;
+            lblPhone.Text = "Số điện thoại"; lblPhone.Location = new Point(15, 136); lblPhone.AutoSize = true; txtPhone.Location = new Point(15, 158); txtPhone.Width = 260;
+            lblAddress.Text = "Địa chỉ"; lblAddress.Location = new Point(15, 194); lblAddress.AutoSize = true; txtAddress.Location = new Point(15, 216); txtAddress.Width = 260;
+            btnAdd.Text = "Thêm"; btnAdd.Location = new Point(15, 260); btnAdd.Click += btnAdd_Click; btnUpdate.Text = "Sửa"; btnUpdate.Location = new Point(95, 260); btnUpdate.Click += btnUpdate_Click; btnDelete.Text = "Xóa"; btnDelete.Location = new Point(175, 260); btnDelete.Click += btnDelete_Click; btnReload.Text = "Tải lại"; btnReload.Location = new Point(15, 300); btnReload.Click += btnReload_Click;
+            panelDetail.Controls.AddRange(new Control[] { lblId, txtCustomerId, lblName, txtCustomerName, lblPhone, txtPhone, lblAddress, txtAddress, btnAdd, btnUpdate, btnDelete, btnReload }); Controls.Add(panelGrid); Controls.Add(panelDetail); ClientSize = new Size(1000, 600); Text = "Quản lý khách hàng"; Load += FormCustomerManagement_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit(); panelGrid.ResumeLayout(false); panelDetail.ResumeLayout(false); panelDetail.PerformLayout(); ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit(); ResumeLayout(false);
         }
-
-        #endregion
     }
 }

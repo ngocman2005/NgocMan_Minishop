@@ -37,7 +37,6 @@ D:\Man\MiniSupermarket.API\obj\Debug\net10.0\staticwebassets.build.json.cache
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\staticwebassets.development.json
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\swae.build.ex.cache
-D:\Man\MiniSupermarket.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\MiniSupe.4C4B8D95.Up2Date
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\MiniSupermarket.API.dll
 D:\Man\MiniSupermarket.API\obj\Debug\net10.0\refint\MiniSupermarket.API.dll
@@ -171,3 +170,12 @@ D:\Man\MiniSupermarket.API\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime
 D:\Man\MiniSupermarket.API\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 D:\Man\MiniSupermarket.API\bin\Debug\net10.0\System.Security.Cryptography.Pkcs.dll
 D:\Man\MiniSupermarket.API\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Security.Cryptography.Pkcs.dll
+D:\Man\build-check-api\appsettings.Development.json
+D:\Man\build-check-api\appsettings.json
+D:\Man\build-check-api\MiniSupermarket.API.staticwebassets.endpoints.json
+D:\Man\build-check-api\MiniSupermarket.API.exe
+D:\Man\build-check-api\MiniSupermarket.API.deps.json
+D:\Man\build-check-api\MiniSupermarket.API.runtimeconfig.json
+D:\Man\build-check-api\MiniSupermarket.API.dll
+D:\Man\build-check-api\MiniSupermarket.API.pdb
+D:\Man\MiniSupermarket.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

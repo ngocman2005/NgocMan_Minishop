@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using MiniSupermarket.API.Data;
 using MiniSupermarket.API.Models;
 using System.Data;
 
@@ -10,10 +12,47 @@ namespace MiniSupermarket.API.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly SupermarketDbContext _context;
 
-        public ReportsController(IConfiguration configuration)
+        public ReportsController(IConfiguration configuration, SupermarketDbContext context)
         {
             _configuration = configuration;
+            _context = context;
+        }
+
+        // GET: api/reports/quick?date=2026-10-22
+        [HttpGet("quick")]
+        public async Task<IActionResult> GetQuickReport([FromQuery] DateTime? date)
+        {
+            var reportDate = (date ?? DateTime.Today).Date;
+            var nextDate = reportDate.AddDays(1);
+
+            var orders = _context.Orders
+                .AsNoTracking()
+                .Where(o => o.CreatedDate >= reportDate && o.CreatedDate < nextDate);
+
+            var totalOrders = await orders.CountAsync();
+            var totalRevenue = await orders.Select(o => (decimal?)o.FinalAmount).SumAsync() ?? 0m;
+
+            var bestSeller = await _context.OrderDetails
+                .AsNoTracking()
+                .Where(d => d.Order != null && d.Order.CreatedDate >= reportDate && d.Order.CreatedDate < nextDate)
+                .GroupBy(d => d.ProductId)
+                .Select(g => new
+                {
+                    ProductName = g.Select(d => d.Product!.ProductName).FirstOrDefault() ?? string.Empty,
+                    Quantity = g.Sum(d => d.Quantity)
+                })
+                .OrderByDescending(x => x.Quantity)
+                .Select(x => x.ProductName)
+                .FirstOrDefaultAsync() ?? string.Empty;
+
+            return Ok(new
+            {
+                totalOrders,
+                totalRevenue,
+                bestSeller
+            });
         }
 
         // GET: api/reports/revenue-by-cashier
